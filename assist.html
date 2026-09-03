@@ -21,35 +21,51 @@
 
         /* This is the assistant box. */
         .assistant {
-            max-width: 500px;
+            max-width: 600px;
             margin: auto;
             background-color: white;
             padding: 25px;
             border-radius: 15px;
             border: 4px solid #8b5e3c;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
 
         h1 {
             color: #b45309;
         }
 
-        /* Each size choice is a clickable button. */
-        .choice {
-            display: block;
-            width: 100%;
-            box-sizing: border-box;
-            background-color: #22c55e;
-            color: white;
-            text-decoration: none;
-            padding: 14px;
-            margin: 12px 0;
+        /* This holds each question. */
+        .question {
+            background-color: #fff8dc;
+            padding: 15px;
+            margin: 15px 0;
             border-radius: 10px;
-            font-weight: bold;
         }
 
-        /* Changes the button color when the user points at it. */
-        .choice:hover {
+        /* These buttons let the customer answer questions. */
+        button {
+            background-color: #22c55e;
+            color: white;
+            border: none;
+            padding: 12px 18px;
+            margin: 5px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
             background-color: #16a34a;
+        }
+
+        /* JavaScript will show the recommendation here. */
+        #result {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fef3c7;
+            border-radius: 10px;
+            font-weight: bold;
+            display: none;
         }
 
         /* Link for going back to the store. */
@@ -57,6 +73,8 @@
             display: inline-block;
             margin-top: 15px;
             color: #8b5e3c;
+            text-decoration: none;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -64,19 +82,67 @@
 <body>
     <div class="assistant">
         <!-- Main heading of the assistant page. -->
-        <h1>🥤 Store Assistant</h1>
+        <h1>🤖 Store Assistant</h1>
+        <p>I'll help you choose a drink size.</p>
 
-        <p>What size would you like?</p>
-        <p>Choose the amount that fits what you need:</p>
+        <!-- First question: how many people will drink? -->
+        <div class="question">
+            <h2>👥 How many people?</h2>
+            <button onclick="choosePeople(1)">1 person</button>
+            <button onclick="choosePeople(2)">2 people</button>
+            <button onclick="choosePeople(3)">3+ people</button>
+        </div>
 
-        <!-- These choices will be useful later when we add JavaScript. -->
-        <a class="choice" href="#">250 mL - Small</a>
-        <a class="choice" href="#">500 mL - Regular</a>
-        <a class="choice" href="#">1 Liter - Large</a>
-        <a class="choice" href="#">1.5 Liters - Family Size</a>
+        <!-- Second question: how much do you want? -->
+        <div class="question">
+            <h2>🥤 How much do you want?</h2>
+            <button onclick="chooseAmount('small')">Just a little</button>
+            <button onclick="chooseAmount('medium')">Normal amount</button>
+            <button onclick="chooseAmount('large')">For sharing</button>
+        </div>
+
+        <!-- JavaScript puts the recommendation inside this box. -->
+        <div id="result"></div>
 
         <!-- Goes back to the main store page. -->
         <a class="back" href="index.html">← Back to Store</a>
     </div>
+
+    <script>
+        // These variables remember the customer's answers.
+        let people = 1;
+        let amount = 'medium';
+
+        // This runs when the customer chooses the number of people.
+        function choosePeople(numberOfPeople) {
+            people = numberOfPeople;
+            showRecommendation();
+        }
+
+        // This runs when the customer chooses how much they want.
+        function chooseAmount(chosenAmount) {
+            amount = chosenAmount;
+            showRecommendation();
+        }
+
+        // This function decides which size to recommend.
+        function showRecommendation() {
+            let recommendation;
+
+            // More people or sharing means a larger size.
+            if (people >= 3 || amount === 'large') {
+                recommendation = 'We recommend 1.5 Liters 🥤';
+            } else if (people === 2 || amount === 'medium') {
+                recommendation = 'We recommend 1 Liter 🥤';
+            } else {
+                recommendation = 'We recommend 500 mL 🥤';
+            }
+
+            // Find the result box and display the recommendation.
+            const result = document.getElementById('result');
+            result.textContent = '💡 ' + recommendation;
+            result.style.display = 'block';
+        }
+    </script>
 </body>
 </html>

@@ -1,26 +1,63 @@
-
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>My Sari-Sari Store</title>
+    <!-- This tells the browser how to display text correctly. -->
+    <meta charset="UTF-8">
+
+    <!-- This makes the website fit nicely on phones and computers. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- The text here appears on the browser tab. -->
+    <title>My First Website</title>
+
+    <style>
+        /* CSS controls how the HTML looks. */
+        body {
+            font-family: Arial, sans-serif; /* Changes the font. */
+            text-align: center;             /* Centers the text. */
+            background-color: #f2f2f2;     /* Gives the page a light background. */
+            margin: 0;                      /* Removes the browser's default margin. */
+            padding: 40px;                  /* Adds space around the page. */
+        }
+
+        /* This styles our main box. */
+        .box {
+            background-color: white;
+            max-width: 500px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        /* Styles the main heading. */
+        h1 {
+            color: #222;
+        }
+
+        /* Styles the button. */
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
+    <!-- Everything inside body is what the visitor sees. -->
+    <div class="box">
+        <!-- h1 is the main heading of the page. -->
+        <h1>My First Website</h1>
 
-    <h1>My Sari-Sari Store</h1>
+        <!-- p means paragraph. -->
+        <p>Welcome! I am learning HTML and CSS.</p>
 
-    <p>Welcome to my store!</p>
+        <!-- h2 is a smaller heading than h1. -->
+        <h2>My Practice</h2>
 
-    <h2>Our Products</h2>
-
-    <p>Coke - ₱20</p>
-    <p>Lucky Me - ₱15</p>
-    <p>Biscuits - ₱10</p>
-
-    <p>SORITE - ₱20</p>
-    <p>Lucky Me - ₱15</p>
-    <p>Biscuits - ₱10</p>
-
-    <button>Buy Now</button>
-
-
-
+        <!-- This button is for practicing buttons. -->
+        <button>Click Me</button>
+    </div>
+</body>
+</html>

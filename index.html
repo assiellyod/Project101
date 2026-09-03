@@ -8,49 +8,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- This is the name shown on the browser tab. -->
-    <title>Lloyds sarisari store</title>
+    <title>Lloyds Sari-Sari Store</title>
 
     <style>
         /* CSS controls the design and appearance of the website. */
         body {
-            font-family: Arial, sans-serif; /* Changes the text style. */
-            background-color: #fff8dc;      /* Gives the page a light yellow background. */
-            text-align: center;              /* Centers the text. */
-            margin: 0;                       /* Removes default browser spacing. */
-            padding: 20px;                   /* Adds space around the page. */
+            font-family: Arial, sans-serif;
+            background-color: #d7b98e; /* Makes the outside look like a house wall. */
+            text-align: center;
+            margin: 0;
+            padding: 30px 15px;
         }
 
-        /* This is the main store container. */
-        .store {
-            max-width: 600px;                /* Keeps the store from becoming too wide. */
-            margin: auto;                    /* Centers the container. */
-            background-color: white;         /* Makes the store box white. */
-            padding: 25px;                   /* Adds space inside the box. */
-            border-radius: 15px;             /* Makes the corners rounded. */
+        /* This creates the house/store building. */
+        .house {
+            max-width: 650px;
+            margin: auto;
+            background-color: #f4d7a1;
+            border: 5px solid #8b5e3c;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
 
-        /* This styles the store name. */
+        /* This makes the roof look like a small house roof. */
+        .roof {
+            background-color: #8b5e3c;
+            color: white;
+            padding: 15px;
+            margin: -20px -20px 20px -20px;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        /* This is the store sign hanging on the house. */
+        .sign {
+            background-color: #fff3b0;
+            border: 3px solid #d97706;
+            padding: 12px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
         h1 {
-            color: #d97706;
-            margin-bottom: 5px;
+            color: #b45309;
+            margin: 5px;
         }
 
-        /* This creates a simple product card. */
+        /* This creates the inside shop area. */
+        .shop {
+            background-color: #fffdf5;
+            border: 3px solid #8b5e3c;
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        /* This creates a simple shelf for the products. */
+        .shelf {
+            background-color: #c58b5c;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        /* Each product is placed inside its own product box. */
         .product {
-            border: 1px solid #ddd;          /* Adds a thin border around products. */
-            padding: 15px;                   /* Adds space inside each product. */
-            margin: 10px 0;                  /* Adds space between products. */
+            background-color: white;
+            border: 2px solid #ddd;
+            padding: 15px;
+            margin: 10px 0;
             border-radius: 10px;
         }
 
-        /* This styles the product name. */
         .product h3 {
             margin: 5px;
         }
 
         /* This styles the Buy button. */
         button {
-            background-color: #22c55e;       /* Makes the button green. */
+            background-color: #22c55e;
             color: white;
             border: none;
             padding: 10px 18px;
@@ -58,47 +94,72 @@
             cursor: pointer;
         }
 
-        /* Changes the button to a darker green when hovered. */
+        /* Makes the button darker when the mouse is over it. */
         button:hover {
             background-color: #16a34a;
+        }
+
+        /* This makes the door look like part of the house. */
+        .door {
+            background-color: #6b4226;
+            color: white;
+            width: 90px;
+            padding: 12px 0;
+            margin: 20px auto 0;
+            border-radius: 8px 8px 0 0;
         }
     </style>
 </head>
 
 <body>
-    <!-- Everything inside body is visible on the website. -->
-    <div class="store">
+    <!-- The house contains the whole sari-sari store. -->
+    <div class="house">
 
-        <!-- h1 is the biggest/main heading. -->
-        <h1>🛒 Axie sari sari store</h1>
+        <!-- The roof is the top part of our house design. -->
+        <div class="roof">🏠 LLOYD'S MINI STORE</div>
 
-        <!-- p is used for a paragraph or short description. -->
-        <p>Welcome! Your neighborhood store.</p>
-
-        <!-- h2 is a smaller heading than h1. -->
-        <h2>Our Products</h2>
-
-        <!-- Each product is placed inside its own product box. -->
-        <div class="product">
-            <h3>Coke</h3>
-            <p>₱20</p>
-            <button>Buy Now</button>
+        <!-- This is the sign people see when they visit the store. -->
+        <div class="sign">
+            <h1>🛒 Axie Sari-Sari Store</h1>
+            <p>Welcome to our neighborhood store!</p>
         </div>
 
-        <div class="product">
-            <h3>Lucky Me</h3>
-            <p>₱15</p>
-            <button>Buy Now</button>
+        <!-- This is the inside area of the store. -->
+        <div class="shop">
+            <h2>🛍️ Our Products</h2>
+
+            <!-- Shelf 1 contains our first product. -->
+            <div class="shelf">
+                <div class="product">
+                    <h3>🥤 Coke</h3>
+                    <p>₱20</p>
+                    <button>Buy Now</button>
+                </div>
+            </div>
+
+            <!-- Shelf 2 contains another product. -->
+            <div class="shelf">
+                <div class="product">
+                    <h3>🍜 Lucky Me</h3>
+                    <p>₱15</p>
+                    <button>Buy Now</button>
+                </div>
+            </div>
+
+            <!-- Shelf 3 contains another product. -->
+            <div class="shelf">
+                <div class="product">
+                    <h3>🍪 Biscuits</h3>
+                    <p>₱10</p>
+                    <button>Buy Now</button>
+                </div>
+            </div>
+
+            <p>Thank you for shopping with us! ❤️</p>
         </div>
 
-        <div class="product">
-            <h3>Biscuits</h3>
-            <p>₱10</p>
-            <button>Buy Now</button>
-        </div>
-
-        <!-- This is a simple footer message. -->
-        <p>Thank you for shopping with us!</p>
+        <!-- This is the door at the front of the house. -->
+        <div class="door">🚪 Door</div>
     </div>
 </body>
 </html>

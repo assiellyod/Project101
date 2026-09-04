@@ -7,14 +7,17 @@
     <!-- This makes the website fit properly on phones. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- This is the name shown on the browser tab. -->
     <title>Lloyds Sari-Sari Store</title>
 
     <style>
         /* CSS controls the design and appearance of the website. */
         body {
             font-family: Arial, sans-serif;
-            background-color: #d7b98e;
+            background-color: #07101f;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.65)), url('campfire.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             text-align: center;
             margin: 0;
             padding: 30px 15px;
@@ -24,11 +27,11 @@
         .house {
             max-width: 650px;
             margin: auto;
-            background-color: #f4d7a1;
+            background-color: rgba(244, 215, 161, 0.96);
             border: 5px solid #8b5e3c;
             border-radius: 8px;
             padding: 20px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         /* This makes the roof look like a small house roof. */
@@ -138,6 +141,23 @@
             border-radius: 10px;
             font-weight: bold;
         }
+
+        /* Music player section. */
+        .music-box {
+            background-color: rgba(20, 20, 20, 0.9);
+            color: white;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 12px;
+        }
+
+        .music-box iframe {
+            width: 100%;
+            max-width: 560px;
+            height: 90px;
+            border: 0;
+            border-radius: 10px;
+        }
     </style>
 </head>
 
@@ -164,6 +184,18 @@
             🛍️ Come and check out our products!<br>
             ❤️ Affordable, useful, and ready for you!<br>
             👉 Palit na mo! Support our small store!
+        </div>
+
+        <!-- Uncle Dags music is streamed from the official YouTube video. -->
+        <div class="music-box">
+            <h3>🎵 Store Music — Uncle Dags</h3>
+            <p>Press play to start the music.</p>
+            <iframe
+                src="https://www.youtube.com/embed/kp1WvaPlkYw?autoplay=0&loop=1&playlist=kp1WvaPlkYw"
+                title="Uncle Dags - SUNNY DAY"
+                allow="autoplay; encrypted-media; picture-in-picture"
+                allowfullscreen>
+            </iframe>
         </div>
 
         <!-- This is the inside area of the store. -->

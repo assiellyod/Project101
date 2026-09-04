@@ -42,6 +42,46 @@
             border-radius: 10px;
         }
 
+        /* Makes the price stand out. */
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Styles the Buy Now button. */
+        button {
+            background-color: #22c55e;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #16a34a;
+        }
+
+        /* Small quantity box for each product. */
+        input {
+            width: 55px;
+            padding: 8px;
+            margin: 8px;
+            text-align: center;
+        }
+
+        /* Shows a message after clicking Buy Now. */
+        #message {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #fff3b0;
+            border: 2px solid #d97706;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
         /* Back button returns to the main store. */
         .back {
             display: inline-block;
@@ -61,29 +101,59 @@
         <h1>🥩 Meat, Fish & More</h1>
         <p>Welcome to our fresh products section!</p>
 
-        <!-- Meat products. -->
+        <!-- Beef product. -->
         <div class="product">
             <h2>🥩 Beef</h2>
             <p>Fresh beef for your meals.</p>
+            <p class="price">₱250 / kg</p>
+            <label>Quantity: <input id="beefQty" type="number" min="1" value="1"></label>
+            <button onclick="buyProduct('Beef', 'beefQty')">Buy Now</button>
         </div>
 
+        <!-- Chicken product. -->
         <div class="product">
             <h2>🍗 Chicken</h2>
             <p>Fresh chicken for cooking.</p>
+            <p class="price">₱180 / kg</p>
+            <label>Quantity: <input id="chickenQty" type="number" min="1" value="1"></label>
+            <button onclick="buyProduct('Chicken', 'chickenQty')">Buy Now</button>
         </div>
 
-        <!-- Fish products. -->
+        <!-- Fish product. -->
         <div class="product">
             <h2>🐟 Fish</h2>
             <p>Fresh fish for your meal.</p>
+            <p class="price">₱200 / kg</p>
+            <label>Quantity: <input id="fishQty" type="number" min="1" value="1"></label>
+            <button onclick="buyProduct('Fish', 'fishQty')">Buy Now</button>
         </div>
 
+        <!-- Seafood product. -->
         <div class="product">
             <h2>🦐 Seafood</h2>
-            <p>More seafood choices coming soon.</p>
+            <p>More seafood choices for your meals.</p>
+            <p class="price">₱300 / kg</p>
+            <label>Quantity: <input id="seafoodQty" type="number" min="1" value="1"></label>
+            <button onclick="buyProduct('Seafood', 'seafoodQty')">Buy Now</button>
         </div>
 
+        <!-- JavaScript handles the Buy Now buttons. -->
+        <div id="message"></div>
+
+        <!-- Goes back to the main store. -->
         <a class="back" href="index.html">← Back to Store</a>
     </div>
+
+    <script>
+        // This function gets the product name and quantity from the page.
+        function buyProduct(productName, inputId) {
+            const quantity = document.getElementById(inputId).value;
+            const message = document.getElementById('message');
+
+            // Show a confirmation message to the customer.
+            message.textContent = '🛒 You selected ' + quantity + ' kg of ' + productName + '! Thank you for shopping! ❤️';
+            message.style.display = 'block';
+        }
+    </script>
 </body>
 </html>

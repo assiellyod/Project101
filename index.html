@@ -13,30 +13,30 @@
         /* CSS controls the design and appearance of the website. */
         body {
             font-family: Arial, sans-serif;
-            /* Keep the page itself yellow. The campfire photo is used on the store. */
-            background-color: #fff3b0;
+            /* The campfire is now the page background so you can see the whole photo. */
+            background-image: url('campfire.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             text-align: center;
             margin: 0;
             padding: 30px 15px;
+            min-height: 100vh;
         }
 
-        /* This creates the house/store building. */
+        /* The store itself is transparent so the campfire stays visible behind it. */
         .house {
             max-width: 650px;
             margin: auto;
-            /* The campfire photo replaces the old yellow store background. */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.35)), url('campfire.jpg');
-            background-size: cover;
-            background-position: center;
-            border: 5px solid #8b5e3c;
+            background-color: transparent;
+            border: 3px solid rgba(255, 255, 255, 0.7);
             border-radius: 8px;
             padding: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        /* This makes the roof look like a small house roof. */
+        /* Keep the roof simple but slightly transparent so the photo can still be seen around it. */
         .roof {
-            background-color: #8b5e3c;
+            background-color: rgba(139, 94, 60, 0.55);
             color: white;
             padding: 15px;
             margin: -20px -20px 20px -20px;
@@ -44,17 +44,21 @@
             font-size: 24px;
         }
 
-        /* This is the store sign. */
+        /* The sign is transparent, but the words remain easy to read. */
         .sign {
-            background-color: rgba(255, 243, 176, 0.95);
-            border: 3px solid #d97706;
+            background-color: rgba(0, 0, 0, 0.28);
+            border: 2px solid rgba(255, 255, 255, 0.7);
             padding: 12px;
             border-radius: 10px;
             margin-bottom: 20px;
         }
 
+        h1, h2, h3, p {
+            color: white;
+            text-shadow: 2px 2px 4px black;
+        }
+
         h1 {
-            color: #b45309;
             margin: 5px;
         }
 
@@ -65,39 +69,40 @@
 
         .tab {
             display: inline-block;
-            background-color: #8b5e3c;
+            background-color: rgba(139, 94, 60, 0.75);
             color: white;
             padding: 10px 16px;
             margin: 5px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
+            text-shadow: 1px 1px 2px black;
         }
 
         .tab:hover {
-            background-color: #6b4226;
+            background-color: rgba(107, 66, 38, 0.9);
         }
 
-        /* This creates the inside shop area. */
+        /* The shop area is transparent so the campfire remains visible. */
         .shop {
-            background-color: rgba(255, 253, 245, 0.95);
-            border: 3px solid #8b5e3c;
+            background-color: rgba(0, 0, 0, 0.18);
+            border: 2px solid rgba(255, 255, 255, 0.65);
             padding: 20px;
             border-radius: 12px;
         }
 
-        /* This creates a simple shelf for the products. */
+        /* Shelves are transparent too, allowing the background to show through. */
         .shelf {
-            background-color: #c58b5c;
+            background-color: rgba(139, 94, 60, 0.3);
             padding: 10px;
             border-radius: 8px;
             margin: 15px 0;
         }
 
-        /* Each product is placed inside its own product box. */
+        /* Product boxes are mostly transparent but still readable. */
         .product {
-            background-color: white;
-            border: 2px solid #ddd;
+            background-color: rgba(0, 0, 0, 0.25);
+            border: 2px solid rgba(255, 255, 255, 0.65);
             padding: 15px;
             margin: 10px 0;
             border-radius: 10px;
@@ -115,6 +120,7 @@
             padding: 10px 18px;
             border-radius: 8px;
             cursor: pointer;
+            font-weight: bold;
         }
 
         /* Makes the button darker when the mouse is over it. */
@@ -122,29 +128,30 @@
             background-color: #16a34a;
         }
 
-        /* This makes the door look like part of the house. */
+        /* This makes the door transparent too. */
         .door {
-            background-color: #6b4226;
+            background-color: rgba(107, 66, 38, 0.6);
             color: white;
             width: 90px;
             padding: 12px 0;
             margin: 20px auto 0;
             border-radius: 8px 8px 0 0;
+            text-shadow: 1px 1px 2px black;
         }
 
-        /* This is the message that encourages visitors to check the products. */
+        /* This message is transparent while the text stays visible. */
         .encourage {
-            background-color: rgba(255, 243, 176, 0.95);
-            border: 2px solid #d97706;
+            background-color: rgba(0, 0, 0, 0.25);
+            border: 2px solid rgba(255, 255, 255, 0.7);
             padding: 15px;
             margin: 20px 0;
             border-radius: 10px;
             font-weight: bold;
         }
 
-        /* Music player section. */
+        /* Music player section is slightly transparent so the background can still be seen. */
         .music-box {
-            background-color: rgba(20, 20, 20, 0.9);
+            background-color: rgba(0, 0, 0, 0.55);
             color: white;
             padding: 15px;
             margin: 20px 0;
@@ -162,7 +169,7 @@
 </head>
 
 <body>
-    <!-- The house contains the whole sari-sari store. -->
+    <!-- The store contains the whole sari-sari store design. -->
     <div class="house">
 
         <!-- The roof is the top part of our house design. -->

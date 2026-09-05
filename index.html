@@ -13,7 +13,12 @@
         /* CSS controls the design and appearance of the website. */
         body {
             font-family: Arial, sans-serif;
-            background-color: #fff3b0;
+            background-color: #07101f;
+            /* Your campfire photo is now the page background instead of the yellow background. */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.65)), url('campfire.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             text-align: center;
             margin: 0;
             padding: 30px 15px;
@@ -23,10 +28,8 @@
         .house {
             max-width: 650px;
             margin: auto;
-            /* The old yellow house background is now replaced by your campfire image. */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.35)), url('campfire.jpg');
-            background-size: cover;
-            background-position: center;
+            /* Removed the campfire background from the house so it is only used as the page background. */
+            background-color: rgba(244, 215, 161, 0.96);
             border: 5px solid #8b5e3c;
             border-radius: 8px;
             padding: 20px;
